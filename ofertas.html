@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ofertas Futuristas</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+/* Fondo animado con pulsaciones */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.05), transparent);
+    animation: backgroundPulse 6s infinite alternate;
+    z-index: -1;
+}
+
+@keyframes backgroundPulse {
+    0% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0.8;
+        transform: scale(1.2);
+    }
+}
+
+/* Estilo general del cuerpo */
+body {
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1e1e2f, #131324);
+    color: #fff;
+    overflow-x: hidden;
+    cursor: url('IMG/90787.png'), auto;
+}
+
+/* Cabecera con efecto HUD */
+header {
+    background: rgba(5, 5, 20, 0.9);
+    border-bottom: 2px solid rgba(0, 255, 255, 0.3);
+    padding: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    z-index: 1000;
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
+    animation: fadeIn 1s ease-out;
+    backdrop-filter: blur(10px);
+    color: #00ffff;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
+    letter-spacing: 2px;
+    animation: neonGlow 2s infinite alternate;
+}
+
+@keyframes neonGlow {
+    from {
+        text-shadow: 0 0 20px #00ffff, 0 0 40px #ff00ff;
+    }
+    to {
+        text-shadow: 0 0 40px #00ffff, 0 0 80px #ff00ff;
+    }
+}
+
+/* Menú de navegación interactivo */
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 95px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.navbar a {
+    font-size: 1.2rem;
+    color: #00ffff;
+    text-decoration: none;
+    padding: 8px 10px;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: #00ffff;
+    transition: width 0.3s;
+}
+
+.navbar a:hover {
+    border: 10px solid #00ffff;
+    color: #ffffff;
+    background: rgba(0, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+/* Ofertas con efecto inmersivo */
+.offers-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 10px;
+}
+
+.offer-card {
+    background: linear-gradient(135deg, #2a2a40, #3b3b5c);
+    border: 1px solid rgba(230, 28, 162, 0.5);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    position: relative;
+    transition: transform 0.5s;
+}
+
+.offer-card:hover {
+    transform: rotateY(10deg) scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 102, 204, 0.8);
+}
+
+.offer-image img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid rgba(255, 102, 204, 0.8);
+}
+
+.offer-details {
+    padding: 20px;
+    text-align: center;
+}
+
+.offer-title {
+    font-size: 1.5rem;
+    color: #00ffff;
+    margin-bottom: 10px;
+}
+
+.offer-price {
+    font-size: 1.2rem;
+    color: #ff66cc;
+    margin-bottom: 20px;
+}
+
+.offer-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(#00ffff, #ff00ff);
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    animation: glow 1.5s infinite alternate;
+    cursor: pointer;
+}
+
+.offer-button:hover {
+    background: linear-gradient(90deg, #ff66cc, #00ffff);
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 0, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(255, 0, 255, 1);
+    }
+}
+
+/* Modal estilo HUD */
+#modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #2a2a40;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+    z-index: 2000;
+    color: #fff;
+    text-align: center;
+}
+
+#modal img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    display: block;
+}
+
+#modal button {
+    background: #ff00ff;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#modal button:hover {
+    background: #66ccff;
+}
+
+/* Barra de progreso inmersiva */
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    background: linear-gradient(#ff00ff, #00ffff);
+    z-index: 1500;
+    width: 0;
+    transition: width 0.25s;
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar a {
+        font-size: 1rem;
+        padding: 10px 12px;
+    }
+
+    .offers-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<header>
+    <h1>Ofertas Tecno</h1>
+</header>
+
+<nav class="navbar">
+    <a href="#offers">Ofertas</a>
+    <a href="index.html">Productos</a>
+    <a href="checkout.html" id="cart-link">Carrito (<span id="cart-count">0</span>)</a>
+    <a href="cerrarsesion.html">Cerrar Sesión</a>
+</nav>
+
+<div id="offers" class="offers-container">
+    <div class="offer-card">
+        <div class="offer-image">
+            <img src="IMG/WhatsApp Image 2024-12-13 at 2.10.21 PM.jpeg" alt="Oferta 1">
+        </div>
+        <div class="offer-details">
+            <h2 class="offer-title">Combo 1 </h2>
+            <p class="offer-price">S/1,919.99</p>
+            <button class="offer-button" data-product="Combo" data-image="IMG/WhatsApp Image 2024-12-13 at 2.10.21 PM.jpeg">Comprar Ahora</button>
+        </div>
+    </div>
+    <div class="offer-card">
+        <div class="offer-image">
+            <img src="IMG/POST (15) (2).png" alt="Oferta 2">
+        </div>
+        <div class="offer-details">
+            <h2 class="offer-title">Combo 2</h2>
+            <p class="offer-price">S/3,379.99</p>
+            <button class="offer-button" data-product="Producto 2" data-image="IMG/POST (15) (2).png">Comprar Ahora</button>
+        </div>
+    </div>
+    <div class="offer-card">
+        <div class="offer-image">
+            <img src="IMG/POST (16) (1).png" alt="Oferta 3">
+        </div>
+        <div class="offer-details">
+            <h2 class="offer-title">Combo 3</h2>
+            <p class="offer-price">S/2,619.99</p>
+            <button class="offer-button" data-product="Producto 3" data-image="IMG/POST (16) (1).png">Comprar Ahora</button>
+        </div>
+    </div>
+</div>
+
+<div id="modal">
+    <img id="modal-image" alt="Producto Imagen">
+    <p>Producto agregado al carrito exitosamente.</p>
+    <button id="close-modal">Cerrar</button>
+</div>
+
+<audio id="notification-sound" src="sounds/notification.mp3" preload="auto"></audio>
+
+<script>
+    let cartCount = 0;
+    const cartCountElement = document.getElementById('cart-count');
+    const modal = document.getElementById('modal');
+    const modalImage = document.getElementById('modal-image');
+    const closeModal = document.getElementById('close-modal');
+    const notificationSound = document.getElementById('notification-sound');
+
+    document.querySelectorAll('.offer-button').forEach(button => {
+        button.addEventListener('click', () => {
+            cartCount++;
+            cartCountElement.textContent = cartCount;
+            cartCountElement.classList.add('updated');
+
+            setTimeout(() => {
+                cartCountElement.classList.remove('updated');
+            }, 500);
+
+            // Mostrar modal
+            modalImage.src = 'IMG/2024-11-22-18-02-35-unscreen.gif';
+            modalImage.alt = `${button.getAttribute('data-product')} Imagen`;
+            modal.style.display = 'block';
+
+            // Reproducir sonido
+            notificationSound.play();
+
+            // Cerrar modal automáticamente después de 3 segundos
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 3000);
+        });
+    });
+
+    closeModal.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const progress = (scrollTop / docHeight) * 100;
+        document.getElementById('progress-bar').style.width = progress + '%';
+    });
+</script>
+
+</body>
+</html>

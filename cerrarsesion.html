@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cerrar sesión en Technology Prime">
+    <meta name="author" content="Technology Prime">
+    <title>Cerrar sesión - Technology Prime</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0a0a0a; /* Fondo oscuro futurista */
+            color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .cerrar-sesion-container {
+            background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.5), 0 0 30px rgba(0, 255, 255, 0.2);
+            text-align: center;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        h1 {
+            color: #00ffff;
+            text-shadow: 0 0 10px #00ffff;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: #ddd;
+            margin-bottom: 2rem;
+        }
+
+        .cerrar-sesion-buttons {
+            display: flex;
+            justify-content: space-around;
+            gap: 1rem;
+        }
+
+        button, .btn-volver {
+            padding: 0.8rem 1.5rem;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.3s;
+            border: none;
+        }
+
+        button {
+            background: linear-gradient(145deg, #00ffff, #008080);
+            color: #0a0a0a;
+            box-shadow: 0 4px 10px rgba(0, 255, 255, 0.5);
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+        }
+
+        .btn-volver {
+            background: #333;
+            color: #eee;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3);
+        }
+
+        .btn-volver:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Contenedor principal -->
+    <div class="cerrar-sesion-container">
+        <div class="cerrar-sesion-content">
+            <h1>¿Estás seguro de que quieres cerrar sesión?</h1>
+            <p>Si haces clic en "Cerrar sesión", saldrás de tu cuenta y serás redirigido a la página de inicio de sesión.</p>
+            <div class="cerrar-sesion-buttons">
+                <!-- Botón de cerrar sesión -->
+                <form action="logout.php" method="POST">
+                    <button type="submit" onclick="window.location.href='login.html'; return false;">Cerrar sesión</button>
+                </form>
+                <!-- Botón para regresar a la página principal -->
+                <a href="index.html" class="btn-volver">Regresar a la tienda</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

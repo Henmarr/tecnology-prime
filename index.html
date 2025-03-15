@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tecnology Prime - Tu tienda en línea de productos electrónicos de alta calidad">
+    <meta name="author" content="Tecnology Prime">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <title>Technology Prime - Electrónica de Alta Calidad</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <h1><a href="index.html" style="color: white;">Technology Prime</a></h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="ofertas.html">Ofertas</a></li>
+                <li><a href="checkout.html" id="cart-link">Carrito (<span id="cart-count">0</span>)</a></li>
+                <li><a href="login.html">Iniciar Sesión</a></li>
+                <li><a href="register.html">Registrarse</a></li>
+                <li><a href="cerrarsesion.html">Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <!-- Main content -->
+    <main>
+
+       <!-- Banner -->
+<section class="banner">
+    <div class="banner-text">
+        <!-- Aquí se añade el logo -->
+        <img src="IMG/POST__12_-removebg-preview.png" alt="Logo de Tecnology Prime" class="logo-banner">
+        
+        <h2>¡Bienvenido a Technology Prime!</h2>
+        <p>Descubre los mejores productos electrónicos con la calidad y garantía que mereces. 
+           Encuentra laptops, periféricos y componentes tecnológicos a precios increíbles.</p>
+        <a href="#productos" class="btn-banner">Explorar Productos</a>
+    </div>
+</section>
+
+        <!-- Productos -->
+        <section id="productos" class="productos">
+
+            <!-- Periféricos -->
+            <h2>Periféricos</h2>
+            <div class="productos-categoria" id="perifericos">
+                <!-- Mouse -->
+                <div class="producto">
+                    <img src="IMG/Mouse corsair.jpg" alt="Corsair Dark Core RGB/SE" class="mouse-image">
+                    <h3>Corsair Dark Core RGB/SE</h3>
+                    <p class="descripcion">Ergonómico, inalámbrico, RGB</p>
+                    <p class="precio">S/ 299.00</p>
+                    <button onclick="addToCart('Corsair Dark Core RGB/SE', 299)">Añadir al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="IMG/Mouse razer.webp" alt="Razer DeathAdder V2" class="mouse-image2">
+                    <h3>Razer DeathAdder V2</h3>
+                    <p class="descripcion">Ergonómico, óptico, cableado</p>
+                    <p class="precio">S/ 249.00</p>
+                    <button onclick="addToCart('Razer DeathAdder V2', 249)">Añadir al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="IMG/Product_20210714120511152237611.png" alt="Logitech G Pro X Superlight" class="mouse-image3">
+                    <h3>Logitech G Pro X Superlight</h3>
+                    <p class="descripcion">Ligero, inalámbrico, diseño de precisión</p>
+                    <p class="precio">S/ 449.00</p>
+                    <button onclick="addToCart('Logitech G Pro X Superlight', 449)">Añadir al carrito</button>
+                </div>
+
+                <!-- Teclados -->
+                <div class="producto">
+                    <img src="IMG/teclado corsair.jpg" alt="Corsair K95 RGB Platinum XT" class="teclado-image">
+                    <h3>Corsair K95 RGB Platinum XT</h3>
+                    <p class="descripcion">Mecánico, RGB, cableado</p>
+                    <p class="precio">S/ 799.00</p>
+                    <button onclick="addToCart('Corsair K95 RGB Platinum XT', 799)">Añadir al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="IMG/teclado razer.jpg" alt="Razer Huntsman Elite" class="teclado-image2">
+                    <h3>Razer Huntsman Elite</h3>
+                    <p class="descripcion">Óptico mecánico, RGB, cableado</p>
+                    <p class="precio">S/ 999.00</p>
+                    <button onclick="addToCart('Razer Huntsman Elite', 999)">Añadir al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="IMG/Teclado logitech.jpg" alt="Logitech G915 TKL" class="teclado-image3">
+                    <h3>Logitech G915 TKL</h3>
+                    <p class="descripcion">Mecánico, inalámbrico, diseño compacto</p>
+                    <p class="precio">S/ 899.00</p>
+                    <button onclick="addToCart('Logitech G915 TKL', 899)">Añadir al carrito</button>
+                </div>
+
+                <!-- Auriculares -->
+                <div class="producto">
+                    <img src="IMG/Audifonos corsair.jpg" alt="Corsair Void Elite RGB" class="auriculares-image">
+                    <h3>Corsair Void Elite RGB</h3>
+                    <p class="descripcion">Inalámbrico, 7.1 surround, RGB</p>
+                    <p class="precio">S/ 599.00</p>
+                    <button onclick="addToCart('Corsair Void Elite RGB', 599)">Añadir al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="IMG/Audifonos chafa.jpg" alt="SteelSeries Arctis 7" class="auriculares-image2">
+                    <h3>SteelSeries Arctis 7</h3>
+                    <p class="descripcion">Inalámbrico, sonido envolvente, diseño cómodo</p>
+                    <p class="precio">S/ 650.00</p>
+                    <button onclick="addToCart('SteelSeries Arctis 7', 650)">Añadir al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="IMG/Audifonos kraken.jpg" alt="Razer Kraken V3" class="auriculares-image3">
+                    <h3>Razer Kraken V3</h3>
+                    <p class="descripcion">Inalámbrico, sonido espacial, diseño robusto</p>
+                    <p class="precio">S/ 750.00</p>
+                    <button onclick="addToCart('Razer Kraken V3', 750)">Añadir al carrito</button>
+                </div>
+
+                <!-- Micrófonos -->
+                <div class="producto">
+                    <img src="IMG/Microfono.jpg" alt="Blue Yeti X" class="microfono-image">
+                    <h3>Blue Yeti X</h3>
+                    <p class="descripcion">USB, 4 patrones de captación, RGB</p>
+                    <p class="precio">S/ 799.00</p>
+                    <button onclick="addToCart('Blue Yeti X', 799)">Añadir al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="IMG/Microfono razer.jpg" alt="Razer Seiren V2 Pro" class="microfono-image2">
+                    <h3>Razer Seiren V2 Pro</h3>
+                    <p class="descripcion">USB, sonido de alta calidad, diseño profesional</p>
+                    <p class="precio">S/ 899.00</p>
+                    <button onclick="addToCart('Razer Seiren V2 Pro', 899)">Añadir al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="IMG/Audifonos hyperx.webp" alt="HyperX QuadCast" class="microfono-image3">
+                    <h3>HyperX QuadCast</h3>
+                    <p class="descripcion">USB, cuatro patrones de captación, LED RGB</p>
+                    <p class="precio">S/ 799.00</p>
+                    <button onclick="addToCart('HyperX QuadCast', 799)">Añadir al carrito</button>
+                </div>
+            </div>
+
+            <!-- Componentes -->
+            <h2>Componentes</h2>
+            <div class="productos-categoria" id="componentes">
+                <!-- Tarjetas gráficas -->
+                <div class="producto">
+                    <img src="IMG/rtx4090.webp" alt="NVIDIA GeForce RTX 4090" class="graficas-image">
+                    <h3>NVIDIA GeForce RTX 4090</h3>
+                    <p class="descripcion">Alta gama, rendimiento extremo, 24GB GDDR6X</p>
+                    <p class="precio">S/ 12,999.00</p>
+                    <button onclick="addToCart('NVIDIA GeForce RTX 4090', 12999)">Añadir al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="IMG/rx-7900-.jpg" alt="AMD Radeon RX 7900 XT" class="graficas-image2">
+                    <h3>AMD Radeon RX 7900 XT</h3>
+                    <p class="descripcion">Alta gama, 20GB GDDR6</p>
+                    <p class="precio">S/ 11,599.00</p>
+                    <button onclick="addToCart('AMD Radeon RX 7900 XT', 11599)">Añadir al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="IMG/rtx 3060.png" alt="NVIDIA GeForce RTX 3060 Ti" class="graficas-image3">
+                    <h3>NVIDIA GeForce RTX 3060 Ti</h3>
+                    <p class="descripcion">Gama media, 8GB GDDR6</p>
+                    <p class="precio">S/ 3,799.00</p>
+                    <button onclick="addToCart('NVIDIA GeForce RTX 3060 Ti', 3799)">Añadir al carrito</button>
+                </div>
+
+                <!-- Placas base -->
+                <div class="producto">
+                    <img src="IMG/placa rog strix.jpg" alt="ASUS ROG Strix Z790-E Gaming WiFi" class="placas-image">
+                    <h3>ASUS ROG Strix Z790-E Gaming WiFi</h3>
+                    <p class="descripcion">Z790, ATX, Wi-Fi 6E</p>
+                    <p class="precio">S/ 799.00</p>
+                    <button onclick="addToCart('ASUS ROG Strix Z790-E Gaming WiFi', 799)">Añadir al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="IMG/6397a3c5ef415c41a4486e5a-msi-mag-b550-tomahawk-max-wifi-gaming.jpg" alt="MSI MAG B550 TOMAHAWK WIFI" class="placas-image2">
+                    <h3>MSI MAG B550 TOMAHAWK WIFI</h3>
+                    <p class="descripcion">B550, ATX, Wi-Fi 6</p>
+                    <p class="precio">S/ 459.00</p>
+                    <button onclick="addToCart('MSI MAG B550 TOMAHAWK WIFI', 459)">Añadir al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="IMG/descarga (1).jpg" alt="Gigabyte AORUS X570 Master" class="placas-image3">
+                    <h3>Gigabyte AORUS X570 Master</h3>
+                    <p class="descripcion">X570, ATX, soporte PCIe 4.0</p>
+                    <p class="precio">S/ 849.00</p>
+                    <button onclick="addToCart('Gigabyte AORUS X570 Master', 849)">Añadir al carrito</button>
+                </div>
+            </div>
+
+            <!-- Laptops -->
+            <h2>Laptops</h2>
+            <div class="productos-categoria" id="laptops">
+
+                <!-- Gaming Laptops -->
+                <div class="producto">
+                    <img src="IMG/laptop 1.webp" alt="Razer Blade 15 Advanced" class="laptops-image">
+                    <h3>Razer Blade 15 Advanced</h3>
+                    <p class="descripcion">Intel Core i9, NVIDIA RTX 3070, 15.6” 144Hz</p>
+                    <p class="precio">S/ 9,999.00</p>
+                    <button onclick="addToCart('Razer Blade 15 Advanced', 9999)">Añadir al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="IMG/Laptop 2.jpg" alt="Alienware X17" class="laptops-image2">
+                    <h3>Alienware X17</h3>
+                    <p class="descripcion">Intel i7, NVIDIA RTX 3080, 17.3” 4K</p>
+                    <p class="precio">S/ 10,499.00</p>
+                    <button onclick="addToCart('Alienware X17', 10499)">Añadir al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="IMG/laptop 3.jpg" alt="Asus ROG Strix Scar 16" class="laptops-image3">
+                    <h3>Asus ROG Strix Scar 16</h3>
+                    <p class="descripcion">AMD Ryzen 9, NVIDIA RTX 4070, 16” 165Hz</p>
+                    <p class="precio">S/ 11,499.00</p>
+                    <button onclick="addToCart('Asus ROG Strix Scar 16', 11499)">Añadir al carrito</button>
+                </div>
+
+                <!-- Ultrabooks -->
+                <div class="producto">
+                    <img src="IMG/laptop 4.webp" alt="Apple MacBook Air M2" class="laptops-image4">
+                    <h3>Apple MacBook Air M2</h3>
+                    <p class="descripcion">Apple M2, 13.6” Retina, hasta 18 hrs de batería</p>
+                    <p class="precio">S/ 6,999.00</p>
+                    <button onclick="addToCart('Apple MacBook Air M2', 6999)">Añadir al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="IMG/laptop 5.jpg" alt="Dell XPS 13" class="laptops-image5">
+                    <h3>Dell XPS 13</h3>
+                    <p class="descripcion">Intel Core i7, 13.4” 4K, pantalla táctil</p>
+                    <p class="precio">S/ 7,499.00</p>
+                    <button onclick="addToCart('Dell XPS 13', 7499)">Añadir al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="IMG/Laptop 6.avif" alt="HP Spectre x360 14" class="laptops-image6">
+                    <h3>HP Spectre x360 14</h3>
+                    <p class="descripcion">Intel Core i7, 13.5” OLED, convertible</p>
+                    <p class="precio">S/ 8,299.00</p>
+                    <button onclick="addToCart('HP Spectre x360 14', 8299)">Añadir al carrito</button>
+                </div>
+            </div>
+
+            <div id="avatar-container">
+                <div id="avatar">
+                    <img src="IMG/image-removebg-preview (16).png" alt="Asistente Virtual">
+                </div>
+                <div id="chatbox">
+                    <div id="chat-header">
+                        <h3>Asistente Virtual</h3>
+                        <button id="close-chat">X</button>
+                    </div>
+                    <div id="chat-messages"></div>
+                    <div id="chat-input">
+                        <input type="text" id="user-input" placeholder="Escribe tu consulta...">
+                        <button id="send-btn">Enviar</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+    
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Tecnology Prime. Todos los derechos reservados.</p>
+    </footer>
+  
+
+</body>
+
+</html>

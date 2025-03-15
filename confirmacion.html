@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confirmación de pago - Technology Prime">
+    <meta name="author" content="Technology Prime">
+    <title>Confirmación de Pago - Technology Prime</title>
+    <!-- Fuente Orbitron -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Orbitron', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #282c34;
+            padding: 15px;
+            color: white;
+            text-align: center;
+        }
+
+        .header-container .logo h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        h2, .checkout p, .payment-option p {
+            color: #ffffff;
+            text-shadow: 0 0 10px #ffffff;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        .checkout p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Contenedor de las opciones de pago */
+        .payment-options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .payment-option {
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .payment-option img {
+            width: 120px;
+            height: auto;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .payment-option:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .selected-method {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: #007bff;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .btn-confirm {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-confirm:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            margin-top: 30px;
+            background-color: #282c34;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>Technology Prime</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Productos</a></li>
+                    <li><a href="ofertas.html">Ofertas</a></li>
+                    <li><a href="#carrito" id="cart-link">Carrito</a></li>
+                    <li><a href="cerrarsesion.html">Cerrar Sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main>
+        <section class="checkout">
+            <h2>¡Gracias por tu compra!</h2>
+            <p>A continuación, se te presentan las opciones de pago por si no tienes tarjeta:</p>
+
+            <!-- Opciones de pago con imágenes -->
+            <div class="payment-options">
+                <!-- Opción Yape -->
+                <div class="payment-option">
+                    <img src="IMG/yape logo.png" alt="Yape" onclick="showPaymentDetails('Yape')">
+                    <p>Yape</p>
+                </div>
+                <!-- Opción Plin -->
+                <div class="payment-option">
+                    <img src="IMG/Plin logo.png" alt="Plin" onclick="showPaymentDetails('Plin')">
+                    <p>Plin</p>
+                </div>
+            </div>
+
+            <div id="selected-method" class="selected-method" style="display: none;"></div>
+
+            <button class="btn-confirm" onclick="confirmPayment()">Confirmar Pago</button>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Technology Prime. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function showPaymentDetails(method) {
+            const selectedMethod = document.getElementById('selected-method');
+            selectedMethod.textContent = 'Método de pago seleccionado: ' + method;
+            selectedMethod.style.display = 'block';
+        }
+
+        function confirmPayment() {
+            alert('Gracias por confirmar tu pago. Procesaremos tu pedido de inmediato.');
+        }
+    </script>
+
+</body>
+</html>

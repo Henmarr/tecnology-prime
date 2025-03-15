@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Estilo Videojuego</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Press+Start+2P&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background: linear-gradient(-45deg, #1d1f2f, #0b0c1d, #202442, #13152c);
+            background-size: 400% 400%;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            animation: gradientBG 15s ease infinite;
+            overflow: hidden;
+            cursor: crosshair;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        canvas {
+            display: block;
+        }
+
+        .hud {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 300px;
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid #00ffe7;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .hud span {
+            display: block;
+            font-size: 12px;
+            color: #00ffe7;
+            margin-bottom: 5px;
+        }
+
+        .avatar {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 120px;
+            animation: float 3s ease-in-out infinite;
+            z-index: 10;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(-50%, -60%) rotate(0deg); }
+            50% { transform: translate(-50%, -50%) rotate(5deg); }
+        }
+
+        .avatar img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(0, 255, 231, 0.7);
+            transition: transform 0.3s ease;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 400px;
+            padding: 2rem;
+            background: rgba(20, 20, 40, 0.85);
+            backdrop-filter: blur(20px);
+            border-radius: 12px;
+            box-shadow: 0 0 30px rgba(0, 255, 200, 0.3);
+            border: 1px solid rgba(0, 255, 200, 0.5);
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, #00ffe7, #ff00f7);
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: glitch 1s infinite;
+        }
+
+        @keyframes glitch {
+            0% { text-shadow: 2px 2px #ff00f7, -2px -2px #00ffe7; }
+            50% { text-shadow: -2px -2px #ff00f7, 2px 2px #00ffe7; }
+            100% { text-shadow: 2px 2px #ff00f7, -2px -2px #00ffe7; }
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #00ffe7;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 1rem;
+            border: 2px solid transparent;
+            border-radius: 6px;
+            font-size: 1rem;
+            color: #fff;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+            outline: none;
+            transition: all 0.4s ease;
+        }
+
+        input:focus {
+            border-color: #00ffe7;
+            background: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.1));
+            box-shadow: 0 0 10px rgba(0, 255, 231, 0.5);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(90deg, #008cff, #00ffe7, #ff00f7);
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #fff;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 255, 200, 0.3);
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 255, 231, 0.6);
+        }
+
+        .link {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .link a {
+            text-decoration: none;
+            color: #00ffe7;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .link a:hover {
+            color: #ff00f7;
+            text-shadow: 0 0 8px rgba(255, 0, 247, 0.7);
+        }
+
+        .crosshair {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: transparent;
+            border: 2px solid #00ffe7;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1000;
+            transition: transform 0.2s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="crosshair" id="crosshair"></div>
+    <canvas class="particles"></canvas>
+    <div class="avatar">
+        <img src="IMG/image-removebg-preview (15).png" alt="Avatar">
+    </div>
+    <div class="container">
+        <h1>Iniciar Sesión</h1>
+        <form method="POST" action="login.php">
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" name="correo" placeholder="Tu correo..." required>
+
+            <label for="clave">Contraseña:</label>
+            <input type="password" id="clave" name="clave" placeholder="Tu contraseña..." required>
+
+            <button type="submit">Ingresar</button>
+        </form>
+        <div class="link">
+            <p>¿No tienes una cuenta? <a href="register.html">Regístrate aquí</a></p>
+        </div>
+    </div>
+    <script>
+        const canvas = document.querySelector('.particles');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const particlesArray = [];
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 5 + 1;
+                this.speedX = Math.random() * 3 - 1.5;
+                this.speedY = Math.random() * 3 - 1.5;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.size > 0.2) this.size -= 0.1;
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(0, 255, 231, 0.7)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.closePath();
+                ctx.fill();
+            }
+        }
+
+        function handleParticles() {
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+                if (particlesArray[i].size <= 0.2) {
+                    particlesArray.splice(i, 1);
+                    i--;
+                }
+            }
+        }
+
+        function createParticles(e) {
+            for (let i = 0; i < 5; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+
+        window.addEventListener('mousemove', createParticles);
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            handleParticles();
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        const avatar = document.querySelector('.avatar img');
+        const correoInput = document.getElementById('correo');
+        const claveInput = document.getElementById('clave');
+
+        // Cambios en el avatar al interactuar
+        correoInput.addEventListener('focus', () => {
+            avatar.src = "IMG/image-removebg-preview (15).png";
+        });
+
+        claveInput.addEventListener('focus', () => {
+            avatar.src = "IMG/image-removebg-preview (14).png";
+        });
+
+        // Crosshair effect
+        const crosshair = document.getElementById('crosshair');
+
+        document.addEventListener('mousemove', (e) => {
+            crosshair.style.left = e.clientX + 'px';
+            crosshair.style.top = e.clientY + 'px';
+        });
+    </script>
+</body>
+</html>

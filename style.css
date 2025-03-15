@@ -1,0 +1,652 @@
+/* Fondo dinámico con partículas y efectos inmersivos */
+body {
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(180deg, #050505, #000000);
+    color: #ffffff;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.logo-banner {
+    width: 400px; /* Ajusta el tamaño del logo */
+    height: auto;
+    display: block;
+    margin: 0 auto 20px; /* Centra el logo y agrega margen inferior */
+}
+
+.mouse-image {
+    width: 400px; /* Ajusta el ancho deseado */
+    height: 350px; /* Mantiene las proporciones originales */
+    display: block; /* Asegura que no se comporte como texto */
+    margin: 0 auto; /* Centra la imagen si está en un contenedor */
+    border-radius: 10px; /* Opcional: esquinas redondeadas */
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5); /* Opcional: sombra decorativa */
+}
+
+.mouse-image2 {
+    width: 400px; /* Ajusta el ancho deseado */
+    height: 380px; /* Mantiene las proporciones originales */
+    display: block; /* Asegura que no se comporte como texto */
+    margin: 0 auto; /* Centra la imagen si está en un contenedor */
+    border-radius: 10px; /* Opcional: esquinas redondeadas */
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5); /* Opcional: sombra decorativa */
+}
+
+.mouse-image3 {
+    width: 400px; /* Ajusta el ancho deseado */
+    height: 380px; /* Mantiene las proporciones originales */
+    display: block; /* Asegura que no se comporte como texto */
+    margin: 0 auto; /* Centra la imagen si está en un contenedor */
+    border-radius: 10px; /* Opcional: esquinas redondeadas */
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5); /* Opcional: sombra decorativa */
+}
+
+.teclado-image {
+    width: 400px; /* Ajusta el ancho deseado */
+    height: 380px; /* Mantiene las proporciones originales */
+    display: block; /* Asegura que no se comporte como texto */
+    margin: 0 auto; /* Centra la imagen si está en un contenedor */
+    border-radius: 10px; /* Opcional: esquinas redondeadas */
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5); /* Opcional: sombra decorativa */
+}
+
+.teclado-image2 {
+    width: 400px; /* Ajusta el ancho deseado */
+    height: 380px; /* Mantiene las proporciones originales */
+    display: block; /* Asegura que no se comporte como texto */
+    margin: 0 auto; /* Centra la imagen si está en un contenedor */
+    border-radius: 10px; /* Opcional: esquinas redondeadas */
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5); /* Opcional: sombra decorativa */
+}
+
+.teclado-image3 {
+    width: 400px; /* Ajusta el ancho deseado */
+    height: 380px; /* Mantiene las proporciones originales */
+    display: block; /* Asegura que no se comporte como texto */
+    margin: 0 auto; /* Centra la imagen si está en un contenedor */
+    border-radius: 10px; /* Opcional: esquinas redondeadas */
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5); /* Opcional: sombra decorativa */
+}
+
+.auriculares-image {
+    width: 400px; /* Ajusta el ancho deseado */
+    height: 380px; /* Mantiene las proporciones originales */
+    display: block; /* Asegura que no se comporte como texto */
+    margin: 0 auto; /* Centra la imagen si está en un contenedor */
+    border-radius: 10px; /* Opcional: esquinas redondeadas */
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5); /* Opcional: sombra decorativa */
+}
+
+.auriculares-image2 {
+    width: 400px; /* Ajusta el ancho deseado */
+    height: 380px; /* Mantiene las proporciones originales */
+    display: block; /* Asegura que no se comporte como texto */
+    margin: 0 auto; /* Centra la imagen si está en un contenedor */
+    border-radius: 10px; /* Opcional: esquinas redondeadas */
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5); /* Opcional: sombra decorativa */
+}
+
+.auriculares-image3 {
+    width: 400px; /* Ajusta el ancho deseado */
+    height: 380px; /* Mantiene las proporciones originales */
+    display: block; /* Asegura que no se comporte como texto */
+    margin: 0 auto; /* Centra la imagen si está en un contenedor */
+    border-radius: 10px; /* Opcional: esquinas redondeadas */
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5); /* Opcional: sombra decorativa */
+}
+
+.microfono-image {
+    width: 400px; /* Ajusta el ancho deseado */
+    height: 380px; /* Mantiene las proporciones originales */
+    display: block; /* Asegura que no se comporte como texto */
+    margin: 0 auto; /* Centra la imagen si está en un contenedor */
+    border-radius: 10px; /* Opcional: esquinas redondeadas */
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5); /* Opcional: sombra decorativa */
+}
+
+.microfono-image2 {
+    width: 400px; /* Ajusta el ancho deseado */
+    height: 380px; /* Mantiene las proporciones originales */
+    display: block; /* Asegura que no se comporte como texto */
+    margin: 0 auto; /* Centra la imagen si está en un contenedor */
+    border-radius: 10px; /* Opcional: esquinas redondeadas */
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5); /* Opcional: sombra decorativa */
+}
+
+.microfono-image3 {
+    width: 400px; /* Ajusta el ancho deseado */
+    height: 380px; /* Mantiene las proporciones originales */
+    display: block; /* Asegura que no se comporte como texto */
+    margin: 0 auto; /* Centra la imagen si está en un contenedor */
+    border-radius: 10px; /* Opcional: esquinas redondeadas */
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5); /* Opcional: sombra decorativa */
+}
+
+.graficas-image {
+    width: 400px; /* Ajusta el ancho deseado */
+    height: 380px; /* Mantiene las proporciones originales */
+    display: block; /* Asegura que no se comporte como texto */
+    margin: 0 auto; /* Centra la imagen si está en un contenedor */
+    border-radius: 10px; /* Opcional: esquinas redondeadas */
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5); /* Opcional: sombra decorativa */
+}
+
+.graficas-image2 {
+    width: 400px; /* Ajusta el ancho deseado */
+    height: 380px; /* Mantiene las proporciones originales */
+    display: block; /* Asegura que no se comporte como texto */
+    margin: 0 auto; /* Centra la imagen si está en un contenedor */
+    border-radius: 10px; /* Opcional: esquinas redondeadas */
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5); /* Opcional: sombra decorativa */
+}
+
+.graficas-image3 {
+    width: 400px; /* Ajusta el ancho deseado */
+    height: 380px; /* Mantiene las proporciones originales */
+    display: block; /* Asegura que no se comporte como texto */
+    margin: 0 auto; /* Centra la imagen si está en un contenedor */
+    border-radius: 10px; /* Opcional: esquinas redondeadas */
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5); /* Opcional: sombra decorativa */
+}
+
+.placas-image {
+    width: 400px; /* Ajusta el ancho deseado */
+    height: 380px; /* Mantiene las proporciones originales */
+    display: block; /* Asegura que no se comporte como texto */
+    margin: 0 auto; /* Centra la imagen si está en un contenedor */
+    border-radius: 10px; /* Opcional: esquinas redondeadas */
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5); /* Opcional: sombra decorativa */
+}
+
+.placas-image2 {
+    width: 400px; /* Ajusta el ancho deseado */
+    height: 380px; /* Mantiene las proporciones originales */
+    display: block; /* Asegura que no se comporte como texto */
+    margin: 0 auto; /* Centra la imagen si está en un contenedor */
+    border-radius: 10px; /* Opcional: esquinas redondeadas */
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5); /* Opcional: sombra decorativa */
+}
+
+.placas-image3 {
+    width: 400px; /* Ajusta el ancho deseado */
+    height: 380px; /* Mantiene las proporciones originales */
+    display: block; /* Asegura que no se comporte como texto */
+    margin: 0 auto; /* Centra la imagen si está en un contenedor */
+    border-radius: 10px; /* Opcional: esquinas redondeadas */
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5); /* Opcional: sombra decorativa */
+}
+
+.laptops-image {
+    width: 400px; /* Ajusta el ancho deseado */
+    height: 380px; /* Mantiene las proporciones originales */
+    display: block; /* Asegura que no se comporte como texto */
+    margin: 0 auto; /* Centra la imagen si está en un contenedor */
+    border-radius: 10px; /* Opcional: esquinas redondeadas */
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5); /* Opcional: sombra decorativa */
+}
+
+.laptops-image2 {
+    width: 400px; /* Ajusta el ancho deseado */
+    height: 380px; /* Mantiene las proporciones originales */
+    display: block; /* Asegura que no se comporte como texto */
+    margin: 0 auto; /* Centra la imagen si está en un contenedor */
+    border-radius: 10px; /* Opcional: esquinas redondeadas */
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5); /* Opcional: sombra decorativa */
+}
+
+.laptops-image3 {
+    width: 400px; /* Ajusta el ancho deseado */
+    height: 380px; /* Mantiene las proporciones originales */
+    display: block; /* Asegura que no se comporte como texto */
+    margin: 0 auto; /* Centra la imagen si está en un contenedor */
+    border-radius: 10px; /* Opcional: esquinas redondeadas */
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5); /* Opcional: sombra decorativa */
+}
+
+.laptops-image4 {
+    width: 400px; /* Ajusta el ancho deseado */
+    height: 380px; /* Mantiene las proporciones originales */
+    display: block; /* Asegura que no se comporte como texto */
+    margin: 0 auto; /* Centra la imagen si está en un contenedor */
+    border-radius: 10px; /* Opcional: esquinas redondeadas */
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5); /* Opcional: sombra decorativa */
+}
+
+.laptops-image5 {
+    width: 400px; /* Ajusta el ancho deseado */
+    height: 380px; /* Mantiene las proporciones originales */
+    display: block; /* Asegura que no se comporte como texto */
+    margin: 0 auto; /* Centra la imagen si está en un contenedor */
+    border-radius: 10px; /* Opcional: esquinas redondeadas */
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5); /* Opcional: sombra decorativa */
+}
+
+.laptops-image6 {
+    width: 400px; /* Ajusta el ancho deseado */
+    height: 380px; /* Mantiene las proporciones originales */
+    display: block; /* Asegura que no se comporte como texto */
+    margin: 0 auto; /* Centra la imagen si está en un contenedor */
+    border-radius: 10px; /* Opcional: esquinas redondeadas */
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5); /* Opcional: sombra decorativa */
+}
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.05), transparent);
+    animation: backgroundPulse 6s infinite alternate;
+    z-index: -1;
+}
+
+@keyframes backgroundPulse {
+    0% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0.8;
+        transform: scale(1.2);
+    }
+}
+/* Cursor personalizado estilo videojuego */
+body {
+    cursor: url('https://cur.cursors-4u.net/cursors/cur-9/cur802.ani'), auto;
+}
+
+/* Interfaz flotante estilo HUD */
+header {
+    background: rgba(5, 5, 20, 0.9);
+    border-bottom: 2px solid rgba(0, 255, 255, 0.3);
+    padding: 20px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.3);
+    animation: fadeIn 1s ease-out;
+    backdrop-filter: blur(10px);
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: neonGlow 2s infinite alternate;
+}
+
+@keyframes neonGlow {
+    from {
+        text-shadow: 0 0 20px #00ffff, 0 0 40px #ff00ff;
+    }
+    to {
+        text-shadow: 0 0 40px #00ffff, 0 0 80px #ff00ff;
+    }
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: neonGlow 2s infinite alternate;
+}
+
+@keyframes neonGlow {
+    from {
+        text-shadow: 0 0 20px #00ffff, 0 0 40px #ff00ff;
+    }
+    to {
+        text-shadow: 0 0 40px #00ffff, 0 0 80px #ff00ff;
+    }
+}
+
+/* Menú interactivo con animaciones */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 95px; /* Ajustado para mayor separación */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten si no hay suficiente espacio */
+    justify-content: center; /* Centra los elementos en el contenedor */
+}
+
+nav ul li a {
+    font-size: 1.2rem; /* Tamaño ajustado */
+    color: #00f5ff;
+    text-decoration: none;
+    padding: 8px 10px; /* Padding ajustado */
+    border: 1px solid transparent;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    backdrop-filter: blur(5px);
+}
+
+nav ul li a:hover::before {
+    left: 100%;
+}
+
+nav ul li a:hover {
+    border: 10px solid #00ffff;
+    color: #ffffff;
+    background: rgba(0, 255, 255, 0.2);
+    transform: scale(1.05); /* Mantiene un efecto suave */
+}
+
+/* Diseño responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Cambia el menú a vertical */
+        gap: 15px; /* Reduce el espacio entre elementos */
+    }
+
+    nav ul li a {
+        font-size: 1rem; /* Reduce el tamaño del texto */
+        padding: 10px 12px; /* Ajusta el padding */
+    }
+}
+
+
+/* Banner inmersivo */
+.banner {
+    background: linear-gradient(135deg, #050505, #1c1c1c);
+    text-align: center;
+    padding: 140px 20px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid rgba(0, 255, 255, 0.5);
+    animation: fadeInUp 1s ease-out;
+}
+
+.banner::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.1), transparent 70%);
+    transform: rotate(0deg);
+    animation: rotateGlow 30s linear infinite;
+    z-index: -1;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rotateGlow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Botones tipo HUD */
+.btn-banner {
+    font-size: 1.5rem;
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #00ffff, #ff00ff);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-banner::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 120%;
+    height: 120%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(45deg);
+    z-index: -1;
+    transition: all 0.5s ease;
+}
+
+.btn-banner:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+    background: linear-gradient( #ff00ff, #00ffff);
+}
+
+.btn-banner:hover::before {
+    top: 0;
+    left: 0;
+}
+
+/* Productos con efecto 3D */
+.producto {
+    background: linear-gradient(145deg, #1a1a1a, #2c2c2c);
+    border: 1px solid rgba(0, 0, 0, 0.685);
+    border-radius: 12px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s, box-shadow 0.5s;
+    position: relative;
+    overflow: hidden;
+    perspective: 500px;
+}
+
+.producto:hover {
+    transform: scale(1.1) rotateY(10deg);
+    box-shadow: 0 20px 50px #00000080;
+}
+
+.producto img {
+    transition: transform 0.5s ease;
+}
+
+.producto:hover img {
+    transform: scale(1.1);
+}
+/* Generar partículas flotantes */
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: repeating-radial-gradient(circle, rgba(19, 16, 16, 0.534), transparent 5px);
+    animation: moveParticles 10s infinite linear;
+    z-index: -1;
+}
+/* Efectos de partículas dinámicas */
+@keyframes particleMove {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-300px) translateX(50px);
+        opacity: 0;
+    }
+}
+
+.particle {
+    position: absolute;
+    background: rgba(0, 255, 255, 0.6);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    animation: particleMove 5s linear infinite;
+    opacity: 0;
+}
+/* Tarjetas de productos con efecto de profundidad */
+.producto {
+    background: linear-gradient(145deg, #1a1a1a, #2c2c2c);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 50px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s, box-shadow 0.5s;
+    position: relative;
+    overflow: hidden;
+    perspective: 800px;
+}
+
+.producto:hover {
+    transform: rotateY(15deg) rotateX(-5deg);
+    box-shadow: 0 20px 70px rgba(0, 255, 255, 0.5);
+}
+
+.producto img {
+    transition: transform 0.5s ease;
+}
+
+.producto:hover img {
+    transform: scale(1.1) rotate(-5deg);
+}
+/* Avatar Container */
+#avatar-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    z-index: 1000;
+}
+
+/* Avatar */
+#avatar img {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    border-radius: 50%;
+    animation: bounce 2s infinite;
+    border: 2px solid #ccc;
+    background-color: white;
+    transition: transform 0.3s;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+#avatar img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Chatbox */
+#chatbox {
+    display: none;
+    position: absolute;
+    bottom: 100px;
+    right: 0;
+    background: #1a1a2e;
+    border: 2px solid #0f3460;
+    border-radius: 10px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+#chat-header {
+    background: #0f3460;
+    color: white;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#chat-header h3 {
+    margin: 0;
+    font-size: 1rem;
+    text-shadow: 0 0 5px cyan;
+}
+
+#chat-header button {
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+#chat-messages {
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+    font-size: 0.9rem;
+    color: white;
+    font-family: "Courier New", monospace;
+    background: #16213e;
+    box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+#chat-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    background: #0f3460;
+}
+
+#chat-input input {
+    flex: 1;
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #16213e;
+    color: white;
+}
+
+#chat-input button {
+    padding: 8px 12px;
+    background-color: #0078d4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px cyan;
+}
+
+#chat-input button:hover {
+    background-color: #005a9e;
+    box-shadow: 0 0 15px cyan;
+}
+
+
